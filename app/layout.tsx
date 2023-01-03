@@ -5,7 +5,7 @@ import Navbar from "./Navbar";
 import "../styles/globals.css";
 import { Karla } from "@next/font/google";
 
-const karla = Karla();
+const karla = Karla({ subsets: ["latin", "latin-ext"] });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
