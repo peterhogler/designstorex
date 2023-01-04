@@ -76,12 +76,14 @@ export default function ProductList(props: any) {
                                 <div
                                     key={product.id}
                                     className="flex flex-col p-4 bg-white rounded shadow hover:translate-y-2 ease-in-out duration-300 group">
-                                    <img
-                                        src={product.image}
-                                        alt={product.title}
-                                        className="w-full h-64 object-cover rounded-t-lg scale-90 duration-300 ease-in-out"
-                                        loading="lazy"
-                                    />
+                                    <Link href="all-products">
+                                        <img
+                                            src={product.image}
+                                            alt={product.title}
+                                            className="w-full h-64 object-cover rounded-t-lg scale-90 duration-300 ease-in-out"
+                                            loading="lazy"
+                                        />
+                                    </Link>
                                     <div className="mt-auto">
                                         <h1 className="text-lg font-semibold h-8 mb-2 overflow-hidden">
                                             {product.title.substring(0, 50)}

@@ -6,9 +6,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "../redux/store";
+import { Product } from "../hooks/useFetch";
 
 const Navbar = () => {
-    const [onHover, setOnHover] = useState(true);
+    const [onHover, setOnHover] = useState(false);
     const pathname = usePathname();
     const cart = useSelector((state: RootState) => state.products);
 
@@ -101,26 +102,33 @@ const Navbar = () => {
                             )}
                             {onHover && (
                                 <div
-                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 items-center p-4 border border-gray-300 z-5"
+                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 py-4 px-2 w-[15vw] border border-gray-300 z-99"
                                     onMouseLeave={() => setOnHover(false)}>
                                     {cart.length === 0 ? (
-                                        <h1 className="text-xl whitespace-nowrap">
+                                        <h1 className="text-lg text-center whitespace-nowrap">
                                             Your shopping cart is empty
                                         </h1>
                                     ) : (
                                         <>
-                                            <h1 className="text-xl">Shopping Cart</h1>
-                                            <div className="flex">
-                                                <div>Image</div>
-                                                <div>Information</div>
-                                                <div>Price</div>
-                                            </div>
-                                            <div>
-                                                <div>Delivery</div>
-                                                <button className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out">
-                                                    Add to cart
-                                                </button>
-                                            </div>
+                                            <h1 className="text-lg text-center">Shopping Cart</h1>
+                                            {cart.map((product: Product) => {
+                                                return (
+                                                    <div key={product.id} className="flex items-center gap-4">
+                                                        <img
+                                                            src={product.image}
+                                                            alt={product.title}
+                                                            className="h-20 w-20 object-cover"
+                                                        />
+                                                        <div className="flex flex-col">
+                                                            <h1 className="text-lg">{product.title}</h1>
+                                                            <h1 className="text-md">${product.price}</h1>
+                                                        </div>
+                                                    </div>
+                                                );
+                                            })}
+                                            <button className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out">
+                                                Go to checkout
+                                            </button>
                                         </>
                                     )}
                                 </div>
