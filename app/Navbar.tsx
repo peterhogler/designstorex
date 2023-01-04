@@ -114,7 +114,7 @@ const Navbar = () => {
                 </div>
                 {onHover && (
                     <div
-                        className="hidden md:flex flex-col z-50 absolute top-[5rem] right-0 bg-white gap-5 p-5 border border-gray-300 w-[20vw]"
+                        className="hidden md:flex flex-col z-50 absolute top-[6.2rem] right-0 bg-white gap-5 p-5 border border-black w-[20vw]"
                         onMouseEnter={() => {
                             if (timeoutId) clearTimeout(timeoutId);
                         }}
