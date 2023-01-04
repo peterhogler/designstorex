@@ -4,17 +4,20 @@ import { useState, useEffect } from "react";
 import { CgSearch, CgUser, CgHeart, CgShoppingCart, CgMenuRightAlt } from "react-icons/cg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { Product } from "../hooks/useFetch";
+import { REMOVE_ITEM } from "../redux/cartReducer";
 
 const Navbar = () => {
-    const [onHover, setOnHover] = useState(false);
+    const [onHover, setOnHover] = useState(true);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
+
     const pathname = usePathname();
+    const dispatch = useDispatch();
 
     const cart = useSelector((state: RootState) => state.products);
-    const total = useSelector((state: RootState) => state.total) + 5;
+    const total = useSelector((state: RootState) => state.total);
 
     useEffect(() => {
         if (cart.length > 0) {
@@ -26,6 +29,10 @@ const Navbar = () => {
             );
         }
     }, [cart]);
+
+    function handleProductDelete(product: Product) {
+        dispatch(REMOVE_ITEM(product));
+    }
 
     return (
         <>
@@ -113,7 +120,7 @@ const Navbar = () => {
                             )}
                             {onHover && (
                                 <div
-                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15vw] border border-gray-300 z-99"
+                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15%vw] border border-gray-300 z-99"
                                     onMouseEnter={() => {
                                         if (timeoutId) clearTimeout(timeoutId);
                                     }}
@@ -139,16 +146,23 @@ const Navbar = () => {
                                                                     <h1 className="text-lg">
                                                                         {product.title}
                                                                     </h1>
-                                                                    <h1 className="text-md">
-                                                                        ${product.price}
-                                                                    </h1>
+                                                                    <div className="flex gap-3 text-md">
+                                                                        <span>
+                                                                            Quantity: {product.quantity}
+                                                                        </span>
+                                                                        <span>${product.price}</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                             <div className="flex gap-5">
                                                                 <span className="text-sm">
                                                                     Add to wishlist
                                                                 </span>
-                                                                <span className="text-sm underline underline-offset-4">
+                                                                <span
+                                                                    className="text-sm underline underline-offset-4"
+                                                                    onClick={() =>
+                                                                        handleProductDelete(product)
+                                                                    }>
                                                                     Remove item
                                                                 </span>
                                                             </div>
