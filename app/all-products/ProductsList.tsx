@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Product } from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { ADD_ITEM } from "../../redux/cartReducer";
+import Link from "next/link";
 
 export default function ProductList(props: any) {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -36,7 +37,7 @@ export default function ProductList(props: any) {
                 <div className="flex w-full md:w-auto gap-2">
                     <label htmlFor="search">Search:</label>
                     <input
-                        className="indent-2 ring-1 ring-black rounded flex-1"
+                        className="indent-2 ring-2 px-2 ring-black rounded flex-1 focus:outline-none focus:ring-emerald-500"
                         id="search"
                         type="text"
                         value={searchFilter}
@@ -59,7 +60,7 @@ export default function ProductList(props: any) {
                     </div>
                 </div>
             </div>
-            <div className="grid lg:grid-cols-5 gap-5 pb-10">
+            <div className="grid grid-cols1 md:grid-cols-3 lg:grid-cols-5 gap-5 pb-10">
                 {filteredProducts.filter((product: Product) => product.price <= priceRange).length === 0 ? (
                     <div className="col-span-5 text-center text-2xl font-semibold">
                         <h1 className="text-2xl font-semibold">
@@ -74,24 +75,26 @@ export default function ProductList(props: any) {
                             return (
                                 <div
                                     key={product.id}
-                                    className="flex flex-col bg-white rounded-lg shadow-lg hover:translate-y-2 ease-in-out duration-300 group">
+                                    className="flex flex-col p-4 bg-white rounded shadow hover:translate-y-2 ease-in-out duration-300 group">
                                     <img
                                         src={product.image}
                                         alt={product.title}
-                                        className="w-full h-64 object-cover rounded-t-lg group-hover:scale-90 duration-300 ease-in-out"
+                                        className="w-full h-64 object-cover rounded-t-lg scale-90 duration-300 ease-in-out"
                                         loading="lazy"
                                     />
-                                    <div className="p-4 mt-auto">
+                                    <div className="mt-auto">
                                         <h1 className="text-lg font-semibold h-8 mb-2 overflow-hidden">
                                             {product.title.substring(0, 50)}
                                         </h1>
                                         <div className="flex justify-between items-center mt-10">
                                             <span className="font-semibold text-xl">${product.price}</span>
-                                            <button
-                                                className="px-5 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
-                                                onClick={() => handleProductAdd(product)}>
-                                                Add to cart
-                                            </button>
+                                            <div className="flex gap-4 items-center">
+                                                <button
+                                                    className="px-5 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                    onClick={() => handleProductAdd(product)}>
+                                                    Add to cart
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

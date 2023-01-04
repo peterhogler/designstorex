@@ -6,8 +6,8 @@ export default function Footer() {
     const pathname = usePathname();
 
     return (
-        <footer className="mt-auto pt-5 border-t border-t-gray-300 ">
-            <div className="grid grid-col-1 lg:grid-cols-3 gap-5 mb-4">
+        <footer className="mt-auto pt-5 border-t border-l border-r border-t-gray-300 bg-gray-50/50">
+            <div className="grid grid-col-1 lg:grid-cols-3 gap-5 mb-4 px-4 ">
                 <div>
                     <h1 className="font-semibold px-1 pb-3  border-b-gray-300 text-[1.1rem]">Categories</h1>
                     <ul className="font-medium flex flex-col gap-2">
@@ -67,8 +67,8 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h1 className="font-semibold pb-3  border-b-gray-300">Info</h1>
-                    <p className="font-medium my-2">
+                    <h1 className="font-semibold pb-3  border-b-gray-300 text-[1.1rem]">Info</h1>
+                    <p className="font-medium mt-1 mb-2">
                         The Project is a fictional store to showcase my skills using React, API, Next.js,
                         Tailwind, Redux, TypeScript and FramerMotion.
                     </p>
@@ -78,10 +78,10 @@ export default function Footer() {
                         <br />
                     </p>
 
-                    <div className="font-medium">Design Store X</div>
+                    <div className="mt-1 font-medium">Design Store X</div>
                 </div>
             </div>
-            <div className="bg-black text-white font-semibold flex flex-col md:flex-row items-center justify-between px-4 py-4 border-t border-t-gray-300">
+            <div className="bg-black text-white font-semibold flex flex-col md:flex-row items-center justify-between px-4 py-2 border-t border-t-gray-300">
                 <div>Design Store X</div>
                 <p className="text-center">&copy; 2023 Design Store X. Made By Peter</p>
             </div>

@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-    html,
+    html {
+        @apply w-[100vw];
+    }
     body {
-        overflow-y: auto;
-        scrollbar-gutter: stable;
+        overflow-y: overlay;
         @apply text-black antialiased;
     }
 

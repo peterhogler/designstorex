@@ -14,11 +14,11 @@ export default function Page() {
                             Your number one stop stop for <br />
                             elegant and modern clothing.
                         </p>
-                        <button className="hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4">
-                            <Link href="all-products" className="flex gap-2">
+                        <Link href="all-products">
+                            <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                 View All Products <CgArrowRight size={23} />
-                            </Link>
-                        </button>
+                            </button>
+                        </Link>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
@@ -30,11 +30,11 @@ export default function Page() {
                                 <br />
                                 Browse Shirts / Trousers / Shoes
                             </p>
-                            <button className="hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
-                                <Link href="all-products" className="flex gap-2">
+                            <Link href="all-products">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div
@@ -47,22 +47,22 @@ export default function Page() {
                                 <br />
                                 Browse Shirts / Trousers / Shoes
                             </p>
-                            <button className="hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
-                                <Link href="all-products" className="flex gap-2">
+                            <Link href="all-products">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                     <div className="flex bg-slate-700 bg-cover col-span-2 bg-[url('https://images.pexels.com/photos/691046/pexels-photo-691046.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
                         <div className="place-self-center p-5">
                             <h1 className="text-2xl">Jewelry</h1>
                             <p className="text-xl my-2">Browse Rings / Bracelets / Necklaces / Earrings</p>
-                            <button className="hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
-                                <Link href="all-products" className="flex gap-2">
+                            <Link href="all-products">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
-                                </Link>
-                            </button>
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

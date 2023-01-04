@@ -18,7 +18,11 @@ export default function Page() {
             ) : data ? (
                 <ProductsList products={data} />
             ) : null}
-            {error ? <div>Error</div> : null}
+            {error ? (
+                <div className="flex flex-col gap-2 items-center text-2xl">
+                    Error has occured, please refresh the site.
+                </div>
+            ) : null}
         </section>
     );
 }
