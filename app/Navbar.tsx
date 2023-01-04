@@ -114,7 +114,9 @@ const Navbar = () => {
                             {onHover && (
                                 <div
                                     className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15vw] border border-gray-300 z-99"
-                                    onMouseEnter={() => clearTimeout(timeoutId)}
+                                    onMouseEnter={() => {
+                                        if (timeoutId) clearTimeout(timeoutId);
+                                    }}
                                     onMouseLeave={() => setOnHover(false)}>
                                     {cart.length === 0 ? (
                                         <h1 className="text-lg text-center ">Your shopping cart is empty</h1>
