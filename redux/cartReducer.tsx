@@ -5,12 +5,14 @@ import { Product } from "../hooks/useFetch";
 interface CartState {
     products: Product[];
     total: number;
+    cartTotal: number;
     addedFixedAmount: boolean;
 }
 
 const initialState: CartState = {
     products: [],
     total: 0,
+    cartTotal: 0,
     addedFixedAmount: false,
 };
 

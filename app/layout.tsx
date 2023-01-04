@@ -15,7 +15,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Provider store={store}>
                 <html className={karla.className}>
                     <head />
-                    <body className="flex flex-col min-h-[100dvh] max-w-[2000px] w-full m-auto px-4">
+                    <body className="flex flex-col min-h-[100dvh] max-w-[1440px] w-full m-auto px-4">
                         <Navbar />
                         {children}
                         <Footer />

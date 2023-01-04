@@ -75,7 +75,7 @@ export default function ProductList(props: any) {
                             return (
                                 <div
                                     key={product.id}
-                                    className="flex flex-col p-4 bg-white rounded shadow hover:-translate-y-2 ease-in-out duration-300 group">
+                                    className="z-10 flex flex-col p-4 bg-white rounded shadow hover:-translate-y-2 ease-in-out duration-300 group ">
                                     <Link href="all-products">
                                         <img
                                             src={product.image}
