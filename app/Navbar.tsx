@@ -12,12 +12,15 @@ const Navbar = () => {
     const [onHover, setOnHover] = useState(false);
     const pathname = usePathname();
     const cart = useSelector((state: RootState) => state.products);
+    const total = useSelector((state: RootState) => state.total);
 
     useEffect(() => {
-        setOnHover(true);
-        setTimeout(() => {
-            setOnHover(false);
-        }, 1500);
+        if (cart.length > 0) {
+            setOnHover(true);
+            setTimeout(() => {
+                setOnHover(false);
+            }, 2500);
+        }
     }, [cart]);
 
     return (
@@ -106,7 +109,7 @@ const Navbar = () => {
                             )}
                             {onHover && (
                                 <div
-                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 py-4 px-2 w-[15vw] border border-gray-300 z-99"
+                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15vw] border border-gray-300 z-99"
                                     onMouseLeave={() => setOnHover(false)}>
                                     {cart.length === 0 ? (
                                         <h1 className="text-lg text-center whitespace-nowrap">
@@ -117,19 +120,39 @@ const Navbar = () => {
                                             <h1 className="text-lg text-center">Shopping Cart</h1>
                                             {cart.map((product: Product) => {
                                                 return (
-                                                    <div key={product.id} className="flex items-center gap-4">
-                                                        <img
-                                                            src={product.image}
-                                                            alt={product.title}
-                                                            className="h-20 w-20 object-cover"
-                                                        />
-                                                        <div className="flex flex-col">
-                                                            <h1 className="text-lg">{product.title}</h1>
-                                                            <h1 className="text-md">${product.price}</h1>
+                                                    <>
+                                                        <div
+                                                            key={product.id}
+                                                            className="flex items-center gap-4">
+                                                            <img
+                                                                src={product.image}
+                                                                alt={product.title}
+                                                                className="h-20 w-20 object-cover"
+                                                            />
+                                                            <div className="flex flex-col">
+                                                                <h1 className="text-lg">{product.title}</h1>
+                                                                <h1 className="text-md">${product.price}</h1>
+                                                            </div>
                                                         </div>
-                                                    </div>
+                                                        <div className="flex gap-5">
+                                                            <span className="text-sm">Add to wishlist</span>
+                                                            <span className="text-sm underline underline-offset-4">
+                                                                Remove item
+                                                            </span>
+                                                        </div>
+                                                    </>
                                                 );
                                             })}
+                                            <div className="flex flex-col text-lg gap-2">
+                                                <div className="flex justify-between">
+                                                    <span>Express Delivery:</span>
+                                                    <span>$5</span>
+                                                </div>
+                                                <div className="flex justify-between">
+                                                    <span>Total:</span>
+                                                    <span className="font-semibold">${total.toFixed()}</span>
+                                                </div>
+                                            </div>
                                             <button className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out">
                                                 Go to checkout
                                             </button>
