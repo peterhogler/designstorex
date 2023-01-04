@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+    * {
+        scrollbar-width: thin;
+    }
+
     html {
         @apply w-[100vw];
     }

@@ -10,22 +10,26 @@ import { Product } from "../hooks/useFetch";
 
 const Navbar = () => {
     const [onHover, setOnHover] = useState(false);
+    const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
     const pathname = usePathname();
+
     const cart = useSelector((state: RootState) => state.products);
-    const total = useSelector((state: RootState) => state.total);
+    const total = useSelector((state: RootState) => state.total) + 5;
 
     useEffect(() => {
         if (cart.length > 0) {
             setOnHover(true);
-            setTimeout(() => {
-                setOnHover(false);
-            }, 3500);
+            setTimeoutId(
+                setTimeout(() => {
+                    setOnHover(false);
+                }, 4500)
+            );
         }
     }, [cart]);
 
     return (
         <>
-            <div className="overflow-y-hidden hidden md:flex py-2 bg-black text-slate-200 items-center justify-center text-center">
+            <div className="overflow-y-hidden hidden md:flex py-2 bg-gray-800/95 text-slate-200 items-center justify-center text-center">
                 <div className="flex items-center justify-center">
                     <span>25% off</span>
                     <span className="mx-2">| Free shipping</span>
@@ -110,50 +114,59 @@ const Navbar = () => {
                             {onHover && (
                                 <div
                                     className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15vw] border border-gray-300 z-99"
+                                    onMouseEnter={() => clearTimeout(timeoutId)}
                                     onMouseLeave={() => setOnHover(false)}>
                                     {cart.length === 0 ? (
-                                        <h1 className="text-lg text-center whitespace-nowrap">
-                                            Your shopping cart is empty
-                                        </h1>
+                                        <h1 className="text-lg text-center ">Your shopping cart is empty</h1>
                                     ) : (
                                         <>
                                             <h1 className="text-lg text-center">Shopping Cart</h1>
-                                            {cart.map((product: Product) => {
-                                                return (
-                                                    <>
-                                                        <div
-                                                            key={product.id}
-                                                            className="flex items-center gap-4">
-                                                            <img
-                                                                src={product.image}
-                                                                alt={product.title}
-                                                                className="h-20 w-20 object-cover"
-                                                            />
-                                                            <div className="flex flex-col">
-                                                                <h1 className="text-lg">{product.title}</h1>
-                                                                <h1 className="text-md">${product.price}</h1>
+                                            <div className="flex flex-col gap-2 max-h-[500px] overflow-y-auto">
+                                                {cart.map((product: Product) => {
+                                                    return (
+                                                        <>
+                                                            <div
+                                                                key={product.id}
+                                                                className="flex items-center gap-4 my-4">
+                                                                <img
+                                                                    src={product.image}
+                                                                    alt={product.title}
+                                                                    className="h-20 w-20 object-cover"
+                                                                />
+                                                                <div className="flex flex-col">
+                                                                    <h1 className="text-lg">
+                                                                        {product.title}
+                                                                    </h1>
+                                                                    <h1 className="text-md">
+                                                                        ${product.price}
+                                                                    </h1>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div className="flex gap-5">
-                                                            <span className="text-sm">Add to wishlist</span>
-                                                            <span className="text-sm underline underline-offset-4">
-                                                                Remove item
-                                                            </span>
-                                                        </div>
-                                                    </>
-                                                );
-                                            })}
+                                                            <div className="flex gap-5">
+                                                                <span className="text-sm">
+                                                                    Add to wishlist
+                                                                </span>
+                                                                <span className="text-sm underline underline-offset-4">
+                                                                    Remove item
+                                                                </span>
+                                                            </div>
+                                                        </>
+                                                    );
+                                                })}
+                                            </div>
                                             <div className="flex flex-col text-lg gap-2">
                                                 <div className="flex justify-between">
-                                                    <span>Express Delivery:</span>
+                                                    <span>Shipping Cost:</span>
                                                     <span>$5</span>
                                                 </div>
                                                 <div className="flex justify-between">
                                                     <span>Total:</span>
-                                                    <span className="font-semibold">${total.toFixed()}</span>
+                                                    <span className="font-semibold">${total.toFixed(0)}</span>
                                                 </div>
                                             </div>
-                                            <button className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out">
+                                            <button
+                                                className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                disabled={cart.length < 1}>
                                                 Go to checkout
                                             </button>
                                         </>

@@ -15,7 +15,7 @@ export default function Page() {
                             elegant and modern clothing.
                         </p>
                         <Link href="all-products">
-                            <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
+                            <button className="flex gap-2 hover:text-emerald-400 bg-gray-800/95 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                 View All Products <CgArrowRight size={23} />
                             </button>
                         </Link>
@@ -31,7 +31,7 @@ export default function Page() {
                                 Browse Shirts / Trousers / Shoes
                             </p>
                             <Link href="all-products">
-                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-gray-800/95 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
                                 </button>
                             </Link>
@@ -48,7 +48,7 @@ export default function Page() {
                                 Browse Shirts / Trousers / Shoes
                             </p>
                             <Link href="all-products">
-                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-gray-800/95 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
                                 </button>
                             </Link>
@@ -59,7 +59,7 @@ export default function Page() {
                             <h1 className="text-2xl">Jewelry</h1>
                             <p className="text-xl my-2">Browse Rings / Bracelets / Necklaces / Earrings</p>
                             <Link href="all-products">
-                                <button className="flex gap-2 hover:text-emerald-400 bg-black/90 px-4 py-[0.75rem] mt-4 duration-200 ease">
+                                <button className="flex gap-2 hover:text-emerald-400 bg-gray-800/95 px-4 py-[0.75rem] mt-4 duration-200 ease">
                                     View All Products <CgArrowRight size={23} />
                                 </button>
                             </Link>

@@ -81,7 +81,7 @@ export default function Footer() {
                     <div className="mt-1 font-medium">Design Store X</div>
                 </div>
             </div>
-            <div className="bg-black text-white font-semibold flex flex-col md:flex-row items-center justify-between px-4 py-2 border-t border-t-gray-300">
+            <div className="bg-gray-800/95 text-white font-semibold flex flex-col md:flex-row items-center justify-between px-4 py-2 border-t border-t-gray-300">
                 <div>Design Store X</div>
                 <p className="text-center">&copy; 2023 Design Store X. Made By Peter</p>
             </div>

@@ -37,7 +37,7 @@ export default function ProductList(props: any) {
                 <div className="flex w-full md:w-auto gap-2">
                     <label htmlFor="search">Search:</label>
                     <input
-                        className="indent-2 ring-2 px-2 ring-black rounded flex-1 focus:outline-none focus:ring-emerald-500"
+                        className="indent-2 ring-2 px-2 ring-slate-300 rounded flex-1 focus:outline-none focus:ring-emerald-500 duration-300 ease-in-out"
                         id="search"
                         type="text"
                         value={searchFilter}
@@ -75,12 +75,12 @@ export default function ProductList(props: any) {
                             return (
                                 <div
                                     key={product.id}
-                                    className="flex flex-col p-4 bg-white rounded shadow hover:translate-y-2 ease-in-out duration-300 group">
+                                    className="flex flex-col p-4 bg-white rounded shadow hover:-translate-y-2 ease-in-out duration-300 group">
                                     <Link href="all-products">
                                         <img
                                             src={product.image}
                                             alt={product.title}
-                                            className="w-full h-64 object-cover rounded-t-lg scale-90 duration-300 ease-in-out"
+                                            className="w-full h-64 object-cover rounded-t-lg  duration-300 ease-in-out"
                                             loading="lazy"
                                         />
                                     </Link>
@@ -92,7 +92,7 @@ export default function ProductList(props: any) {
                                             <span className="font-semibold text-xl">${product.price}</span>
                                             <div className="flex gap-4 items-center">
                                                 <button
-                                                    className="px-5 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                    className="px-5 py-2 bg-gray-800/95 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
                                                     onClick={() => handleProductAdd(product)}>
                                                     Add to cart
                                                 </button>
