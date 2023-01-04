@@ -146,11 +146,11 @@ const Navbar = () => {
                                                 </div>
                                                 <div className="flex gap-5">
                                                     <span className="text-sm">Add to wishlist</span>
-                                                    <span
+                                                    <button
                                                         className="text-sm underline underline-offset-4"
                                                         onClick={() => handleProductDelete(product)}>
                                                         Remove item
-                                                    </span>
+                                                    </button>
                                                 </div>
                                             </>
                                         );
