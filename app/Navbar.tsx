@@ -19,7 +19,7 @@ const Navbar = () => {
             setOnHover(true);
             setTimeout(() => {
                 setOnHover(false);
-            }, 2500);
+            }, 3500);
         }
     }, [cart]);
 
