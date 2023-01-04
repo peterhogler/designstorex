@@ -5,11 +5,13 @@ import { Product } from "../hooks/useFetch";
 interface CartState {
     products: Product[];
     total: number;
+    addedFixedAmount: boolean;
 }
 
 const initialState: CartState = {
     products: [],
     total: 0,
+    addedFixedAmount: false,
 };
 
 const cartSlice = createSlice({
@@ -29,8 +31,10 @@ const cartSlice = createSlice({
                 state.total += action.payload.price * newProduct.quantity;
             }
 
-            if (state.products.length > 0) {
+            if (state.products.length > 0 && state.products.length < 2 && !state.addedFixedAmount) {
                 state.total += 5;
+                // Set the flag to true to indicate that the fixed amount has been added
+                state.addedFixedAmount = true;
             }
         },
         REMOVE_ITEM: (state, action: PayloadAction<Product>) => {

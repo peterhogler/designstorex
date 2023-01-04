@@ -10,7 +10,7 @@ import { Product } from "../hooks/useFetch";
 import { REMOVE_ITEM } from "../redux/cartReducer";
 
 const Navbar = () => {
-    const [onHover, setOnHover] = useState(true);
+    const [onHover, setOnHover] = useState(false);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
     const pathname = usePathname();
@@ -22,6 +22,10 @@ const Navbar = () => {
     useEffect(() => {
         if (cart.length > 0) {
             setOnHover(true);
+
+            if (timeoutId) {
+                clearTimeout(timeoutId);
+            }
             setTimeoutId(
                 setTimeout(() => {
                     setOnHover(false);
@@ -120,7 +124,7 @@ const Navbar = () => {
                             )}
                             {onHover && (
                                 <div
-                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 w-[15%vw] border border-gray-300 z-99"
+                                    className="absolute top-14 right-[-1rem] flex flex-col bg-white gap-5 p-5 md:min-w-[32vw] lg:min-w-[15vw] border border-gray-300 z-99"
                                     onMouseEnter={() => {
                                         if (timeoutId) clearTimeout(timeoutId);
                                     }}
