@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { Product } from "../../hooks/useFetch";
+import { useDispatch } from "react-redux";
+import { ADD_ITEM } from "../../redux/cartReducer";
 
 export default function ProductList(props: any) {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
@@ -7,6 +9,8 @@ export default function ProductList(props: any) {
     const [priceRange, setPriceRange] = useState(200);
 
     const { products } = props;
+
+    const dispatch = useDispatch();
 
     const modifiedProducts = products.filter((product: Product) => {
         return product.category !== "electronics";
@@ -22,7 +26,9 @@ export default function ProductList(props: any) {
         setFilteredProducts(filteredProducts);
     }, [searchFilter, priceRange]);
 
-    console.log(filteredProducts);
+    function handleProductAdd(product: Product) {
+        dispatch(ADD_ITEM(product));
+    }
 
     return (
         <>
@@ -81,7 +87,9 @@ export default function ProductList(props: any) {
                                         </h1>
                                         <div className="flex justify-between items-center mt-10">
                                             <span className="font-semibold text-xl">${product.price}</span>
-                                            <button className="px-5 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out">
+                                            <button
+                                                className="px-5 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                onClick={() => handleProductAdd(product)}>
                                                 Add to cart
                                             </button>
                                         </div>

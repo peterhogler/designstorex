@@ -1,7 +1,7 @@
 export default function Head() {
     return (
         <>
-            <title>Multi Store X - Shop</title>
+            <title>Design Store X | Home</title>
             <meta content="width=device-width, initial-scale=1" name="viewport" />
             <link rel="icon" href="/favicon.ico" />
         </>

@@ -5,8 +5,6 @@ import { usePathname } from "next/navigation";
 export default function Footer() {
     const pathname = usePathname();
 
-    console.log(pathname);
-
     return (
         <footer className="mt-auto pt-5 border-t border-t-gray-300 ">
             <div className="grid grid-col-1 lg:grid-cols-3 gap-5 mb-4">

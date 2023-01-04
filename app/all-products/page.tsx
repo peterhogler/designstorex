@@ -12,7 +12,7 @@ export default function Page() {
                     <div className="flex flex-col gap-2 items-center text-2xl">
                         Please wait while we load the products...
                         <BeatLoader size={50} color="#36d7b7" />
-                        May take a few seconds as the API is slow.
+                        May take a few seconds...
                     </div>
                 </div>
             ) : data ? (
