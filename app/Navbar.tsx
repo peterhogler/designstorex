@@ -14,8 +14,12 @@ const Navbar = () => {
     const cart = useSelector((state: RootState) => state.products);
 
     useEffect(() => {
-        console.log(cart);
+        setOnHover(true);
+        setTimeout(() => {
+            setOnHover(false);
+        }, 1500);
     }, [cart]);
+
     return (
         <>
             <div className="overflow-y-hidden hidden md:flex py-2 bg-black text-slate-200 items-center justify-center text-center">
