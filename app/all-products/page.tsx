@@ -1,7 +1,7 @@
 "use client";
 import useFetch from "../../hooks/useFetch";
-import ProductsList from "../all-products/ProductsList";
 import { BeatLoader } from "react-spinners";
+import ProductsList from "../all-products/ProductsList";
 
 const Page: React.FC = () => {
     const { data, error, isLoading } = useFetch("https://fakestoreapi.com/products");
