@@ -120,8 +120,14 @@ const Navbar: React.FC = () => {
                         }}
                         onMouseLeave={() => setOnHover(false)}>
                         {cart.length === 0 ? (
-                            <div className="p-1">
-                                <h1 className="text-lg text-center">Your shopping cart is empty</h1>
+                            <div className="p-4 text-center">
+                                <h1 className="text-lg">Your shopping cart is empty</h1>
+                                <small>But it doesn't have to be</small>
+                                <div className="mt-3">
+                                    <button className="relative w-full text-black border border-black justify-center py-[0.75rem] hover:bg-black hover:text-white duration-300 ease">
+                                        <Link href="/all-products">View All Products</Link>
+                                    </button>
+                                </div>
                             </div>
                         ) : (
                             <>
@@ -176,7 +182,7 @@ const Navbar: React.FC = () => {
                                 </div>
                                 <div className="flex mx-5 mb-5">
                                     <button
-                                        className="w-full p-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                        className="w-full p-2 bg-black text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
                                         disabled={cart.length < 1}>
                                         Go to checkout
                                     </button>

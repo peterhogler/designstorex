@@ -80,7 +80,7 @@ const ProductList: React.FC<ProductListProps> = (props: any) => {
                                 <div
                                     key={product.id}
                                     className="z-10 flex flex-col p-4 bg-white hover:bg-slate-100 shadow hover:-translate-y-2 ease-in-out duration-300 group ">
-                                    <Link href="all-products">
+                                    <Link href={`/all-products/${product.id}`}>
                                         <img
                                             src={product.image}
                                             alt={product.title}

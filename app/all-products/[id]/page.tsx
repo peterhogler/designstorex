@@ -1,10 +1,17 @@
 "use client";
-import useFetch from "../../hooks/useFetch";
+
+import { usePathname } from "next/navigation";
 import { BeatLoader } from "react-spinners";
-import ProductsList from "../all-products/ProductsList";
+import useFetch from "../../../hooks/useFetch";
+import Product from "./Product";
 
 const Page: React.FC = () => {
-    const { data, error, isLoading } = useFetch("https://fakestoreapi.com/products");
+    const pathname = usePathname();
+    const slug = pathname?.split("/").pop();
+    const { data, isLoading, error } = useFetch(`https://fakestoreapi.com/products/${slug}`);
+
+    console.log(data);
+
     return (
         <section className="py-4">
             {isLoading ? (
@@ -16,7 +23,7 @@ const Page: React.FC = () => {
                     </div>
                 </div>
             ) : data ? (
-                <ProductsList products={data} />
+                <Product />
             ) : null}
             {error ? (
                 <div className="h-[50dvh] grid place-items-center text-2xl">
