@@ -1,17 +1,16 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CgSearch, CgUser, CgHeart, CgShoppingCart, CgMenuRightAlt } from "react-icons/cg";
+import { CgSearch, CgUser, CgHeart, CgShoppingCart } from "react-icons/cg";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { Product } from "../hooks/useFetch";
 import { REMOVE_ITEM } from "../redux/cartReducer";
-import { iteratorSymbol } from "immer/dist/internal";
 
 const Navbar = () => {
-    const [onHover, setOnHover] = useState(false);
+    const [onHover, setOnHover] = useState(true);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
     const pathname = usePathname();
@@ -19,6 +18,7 @@ const Navbar = () => {
 
     const cart = useSelector((state: RootState) => state.products);
     const total = useSelector((state: RootState) => state.total);
+
     const totalCartQuantity = cart.reduce((total, product: Product) => {
         if (product.quantity !== undefined) {
             return (total += product.quantity);
@@ -50,8 +50,8 @@ const Navbar = () => {
             <div className="overflow-y-hidden hidden md:flex py-2 bg-gray-800/95 text-slate-200 items-center justify-center text-center">
                 <div className="flex items-center justify-center">
                     <span>25% off</span>
-                    <span className="mx-2">| Free shipping</span>
                     <span className="mr-2">| Enter code: </span>
+                    <span className="mx-2">| Free shipping</span>
                     <span className="font-semibold">Peter Demo 🔥</span>
                 </div>
             </div>
@@ -114,37 +114,45 @@ const Navbar = () => {
                 </div>
                 {onHover && (
                     <div
-                        className="hidden md:flex flex-col z-50 absolute top-[6.2rem] right-0 bg-white gap-5 p-5 border border-black w-[20vw]"
+                        className="hidden md:flex flex-col z-50 absolute top-[6.2rem] right-0 bg-white gap-5 border border-black w-[336px]"
                         onMouseEnter={() => {
                             if (timeoutId) clearTimeout(timeoutId);
                         }}
                         onMouseLeave={() => setOnHover(false)}>
                         {cart.length === 0 ? (
-                            <h1 className="text-lg text-center ">Your shopping cart is empty</h1>
+                            <div className="p-3">
+                                <h1 className="text-lg text-center">Your shopping cart is empty</h1>
+                            </div>
                         ) : (
                             <>
-                                <h1 className="text-lg text-center">Shopping Cart</h1>
-                                <div className="flex flex-col gap-2 max-h-[500px] overflow-y-auto">
+                                <div className="px-5 mt-3">
+                                    <h1 className="text-lg text-center">Shopping Cart</h1>
+                                </div>
+                                <div className="flex flex-col overflow-y-auto max-h-[400px]">
                                     {cart.map((product: Product) => {
                                         return (
                                             <>
                                                 <div
                                                     key={product.id}
-                                                    className="flex items-center gap-4 my-4">
-                                                    <img
-                                                        src={product.image}
-                                                        alt={product.title}
-                                                        className="h-20 w-20 object-cover"
-                                                    />
+                                                    className="px-5 flex items-center gap-4 my-4">
+                                                    <div>
+                                                        <img
+                                                            src={product.image}
+                                                            alt={product.title}
+                                                            className="h-20 w-20 object-cover"
+                                                        />
+                                                    </div>
                                                     <div className="flex flex-col">
                                                         <h1 className="text-lg">{product.title}</h1>
                                                         <div className="flex gap-3 text-md">
-                                                            <span>Quantity: {product.quantity}</span>
+                                                            <span className="flex-1">
+                                                                Quantity: {product.quantity}
+                                                            </span>
                                                             <span>${product.price}</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div className="flex gap-5">
+                                                <div className="flex gap-5 px-5">
                                                     <span className="text-sm">Add to wishlist</span>
                                                     <button
                                                         className="text-sm underline underline-offset-4"
@@ -156,7 +164,7 @@ const Navbar = () => {
                                         );
                                     })}
                                 </div>
-                                <div className="flex flex-col text-lg gap-2">
+                                <div className="flex flex-col text-lg gap-1 my-4 px-5">
                                     <div className="flex justify-between">
                                         <span>Shipping Cost:</span>
                                         <span>$5</span>
@@ -166,11 +174,13 @@ const Navbar = () => {
                                         <span className="font-semibold">${total.toFixed(0)}</span>
                                     </div>
                                 </div>
-                                <button
-                                    className="px-8 py-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
-                                    disabled={cart.length < 1}>
-                                    Go to checkout
-                                </button>
+                                <div className="flex mx-5 mb-5">
+                                    <button
+                                        className="w-full p-2 bg-gray-800 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                        disabled={cart.length < 1}>
+                                        Go to checkout
+                                    </button>
+                                </div>
                             </>
                         )}
                     </div>

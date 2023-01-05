@@ -60,7 +60,7 @@ export default function ProductList(props: any) {
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols1 md:grid-cols-3 lg:grid-cols-5 gap-5 pb-10">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 pb-10">
                 {filteredProducts.filter((product: Product) => product.price <= priceRange).length === 0 ? (
                     <div className="col-span-5 text-center text-2xl font-semibold">
                         <h1 className="text-2xl font-semibold">
@@ -88,7 +88,7 @@ export default function ProductList(props: any) {
                                         <h1 className="text-lg font-semibold h-8 mb-2 overflow-hidden">
                                             {product.title.substring(0, 50)}
                                         </h1>
-                                        <div className="flex justify-between items-center mt-10">
+                                        <div className="flex flex-wrap gap-2 justify-between items-center mt-10">
                                             <span className="font-semibold text-xl">${product.price}</span>
                                             <div className="flex gap-4 items-center">
                                                 <button
