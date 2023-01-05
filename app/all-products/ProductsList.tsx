@@ -85,14 +85,18 @@ export default function ProductList(props: any) {
                                         />
                                     </Link>
                                     <div className="mt-auto">
-                                        <h1 className="text-lg font-semibold h-8 mb-2 overflow-hidden">
+                                        <h1 className="text-lg font-semibold h-8 mt-4 overflow-hidden">
                                             {product.title.substring(0, 50)}
                                         </h1>
-                                        <div className="flex flex-wrap gap-2 justify-between items-center mt-10">
-                                            <span className="font-semibold text-xl">${product.price}</span>
-                                            <div className="flex gap-4 items-center">
+                                        <div className="flex flex-wrap md:flex-nowrap gap-2 justify-between items-center mt-4">
+                                            <div className="w-full">
+                                                <span className="font-semibold text-xl">
+                                                    ${product.price}
+                                                </span>
+                                            </div>
+                                            <div className="flex gap-4 items-center w-full">
                                                 <button
-                                                    className="px-5 py-2 bg-gray-800/95 text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                    className="whitespace-nowrap w-full md:w-auto px-5 py-2 bg-gray-800/95 text-white font-semibold hover:text-emerald-500 duration-300 ease-in-out"
                                                     onClick={() => handleProductAdd(product)}>
                                                     Add to cart
                                                 </button>
