@@ -1,4 +1,4 @@
-export default function Head() {
+const Head: React.FC = () => {
     return (
         <>
             <title>Design Store X | Home</title>
@@ -6,4 +6,6 @@ export default function Head() {
             <link rel="icon" href="/favicon.ico" />
         </>
     );
-}
+};
+
+export default Head;

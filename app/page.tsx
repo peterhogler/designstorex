@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { CgArrowRight } from "react-icons/cg";
 
-export default function Page() {
+const Page: React.FC = () => {
     return (
         <section className="py-4 ">
             <div className="text-white grid grid-cols-1 lg:grid-cols-2 h-[100%] gap-4">
@@ -69,4 +69,6 @@ export default function Page() {
             </div>
         </section>
     );
-}
+};
+
+export default Page;

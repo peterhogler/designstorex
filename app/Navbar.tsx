@@ -9,7 +9,7 @@ import { RootState } from "../redux/store";
 import { Product } from "../hooks/useFetch";
 import { REMOVE_ITEM } from "../redux/cartReducer";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
     const [onHover, setOnHover] = useState(false);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 

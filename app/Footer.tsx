@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export default function Footer() {
+const Footer: React.FC = () => {
     const pathname = usePathname();
 
     return (
@@ -88,3 +88,5 @@ export default function Footer() {
         </footer>
     );
 }
+
+export default Footer

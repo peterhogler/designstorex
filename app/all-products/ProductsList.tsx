@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
-import { Product } from "../../hooks/useFetch";
+import { Product, Data } from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { ADD_ITEM } from "../../redux/cartReducer";
 import Link from "next/link";
 
-export default function ProductList(props: any) {
+interface ProductListProps {
+    products: Data;
+}
+
+const ProductList: React.FC<ProductListProps> = (props: any) => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [searchFilter, setSearchFilter] = useState("");
     const [priceRange, setPriceRange] = useState(200);
@@ -110,4 +114,6 @@ export default function ProductList(props: any) {
             </div>
         </>
     );
-}
+};
+
+export default ProductList;

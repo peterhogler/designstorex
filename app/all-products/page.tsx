@@ -3,7 +3,7 @@ import useFetch from "../../hooks/useFetch";
 import ProductsList from "../all-products/ProductsList";
 import { BeatLoader } from "react-spinners";
 
-export default function Page() {
+const Page: React.FC = () => {
     const { data, error, isLoading } = useFetch("https://fakestoreapi.com/products");
     return (
         <section className="py-4">
@@ -25,4 +25,6 @@ export default function Page() {
             ) : null}
         </section>
     );
-}
+};
+
+export default Page;
