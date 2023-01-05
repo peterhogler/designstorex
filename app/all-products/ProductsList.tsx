@@ -100,7 +100,7 @@ const ProductList: React.FC<ProductListProps> = (props: any) => {
                                             </div>
                                             <div className="flex gap-4 items-center w-full">
                                                 <button
-                                                    className="whitespace-nowrap w-full md:w-auto px-5 py-2 bg-gray-800/95 text-white font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                                    className="whitespace-nowrap w-full md:w-auto px-5 py-2 bg-black text-white font-semibold hover:text-emerald-500 duration-300 ease-in-out"
                                                     onClick={() => handleProductAdd(product)}>
                                                     Add to cart
                                                 </button>

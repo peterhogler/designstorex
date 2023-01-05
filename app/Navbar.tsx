@@ -47,7 +47,7 @@ const Navbar: React.FC = () => {
 
     return (
         <>
-            <div className="overflow-y-hidden hidden md:flex py-2 bg-gray-800/95 text-slate-200 items-center justify-center text-center">
+            <div className="overflow-y-hidden hidden md:flex py-2 bg-black text-slate-200 items-center justify-center text-center">
                 <div className="flex items-center justify-center">
                     <span>25% off</span>
                     <span className="mr-2">| Enter code: </span>
