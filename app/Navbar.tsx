@@ -10,7 +10,7 @@ import { Product } from "../hooks/useFetch";
 import { REMOVE_ITEM } from "../redux/cartReducer";
 
 const Navbar = () => {
-    const [onHover, setOnHover] = useState(true);
+    const [onHover, setOnHover] = useState(false);
     const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
 
     const pathname = usePathname();
@@ -120,7 +120,7 @@ const Navbar = () => {
                         }}
                         onMouseLeave={() => setOnHover(false)}>
                         {cart.length === 0 ? (
-                            <div className="p-3">
+                            <div className="p-1">
                                 <h1 className="text-lg text-center">Your shopping cart is empty</h1>
                             </div>
                         ) : (
