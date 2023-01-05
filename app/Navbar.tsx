@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
 import { Product } from "../hooks/useFetch";
-import { REMOVE_ITEM } from "../redux/cartReducer";
+import { ADD_ITEM, REMOVE_ITEM } from "../redux/cartReducer";
 
 const Navbar: React.FC = () => {
     const [onHover, setOnHover] = useState(false);
@@ -41,9 +41,12 @@ const Navbar: React.FC = () => {
         }
     }, [cart]);
 
-    function handleProductDelete(product: Product) {
+    const handleProductAdd = (product: Product) => {
+        dispatch(ADD_ITEM(product));
+    };
+    const handleProductDelete = (product: Product) => {
         dispatch(REMOVE_ITEM(product));
-    }
+    };
 
     return (
         <>
@@ -155,8 +158,14 @@ const Navbar: React.FC = () => {
                                                     <div className="flex flex-col">
                                                         <h1 className="text-lg">{product.title}</h1>
                                                         <div className="flex gap-3 text-md">
-                                                            <span className="flex-1">
+                                                            <span className="flex-1 flex gap-2">
                                                                 Quantity: {product.quantity}
+                                                                <button
+                                                                    onClick={() => handleProductAdd(product)}>
+                                                                    <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
+                                                                        +
+                                                                    </div>
+                                                                </button>
                                                             </span>
                                                             <span>${product.price}</span>
                                                         </div>
