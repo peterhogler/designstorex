@@ -9,7 +9,9 @@ const Footer: React.FC = () => {
         <footer className="mt-auto pt-5 border-t border-l border-r border-t-gray-300 bg-gray-50/50">
             <div className="grid grid-col-1 lg:grid-cols-3 gap-5 mb-4 px-4 ">
                 <div>
-                    <h1 className="font-semibold px-1 pb-3  border-b-gray-300 text-[1.1rem]">Categories</h1>
+                    <h1 className="font-semibold underline underline-offset-4 px-1 pb-3  border-b-gray-300 text-[1.1rem]">
+                        Categories
+                    </h1>
                     <ul className="font-medium flex flex-col gap-2">
                         <li
                             className={`hover:bg-black p-1 duration-200 ease-linear hover:text-emerald-500 ${
@@ -38,7 +40,9 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div className="border-x px-4 overflow-hidden">
-                    <h1 className="font-semibold px-1 pb-3  border-b-gray-300 text-[1.1rem]">Subpages</h1>
+                    <h1 className="font-semibold underline underline-offset-4 px-1 pb-3  border-b-gray-300 text-[1.1rem]">
+                        Subpages
+                    </h1>
                     <ul className="font-medium flex flex-col gap-2">
                         <li
                             className={`hover:bg-black p-1 duration-200 ease-linear hover:text-emerald-500 ${
@@ -67,7 +71,9 @@ const Footer: React.FC = () => {
                     </ul>
                 </div>
                 <div>
-                    <h1 className="font-semibold pb-3  border-b-gray-300 text-[1.1rem]">Info</h1>
+                    <h1 className="font-semibold underline underline-offset-4 pb-3  border-b-gray-300 text-[1.1rem]">
+                        Info
+                    </h1>
                     <p className="font-medium mt-1 mb-2">
                         A fictional store to showcase my skills using React, API, Next.js, Tailwind, Redux,
                         TypeScript.
