@@ -37,11 +37,11 @@ const ProductList: React.FC<ProductListProps> = (props: any) => {
 
     return (
         <>
-            <div className="h-10 mb-3 md:mb-4 flex flex-col md:flex-row items-center gap-4 font-semibold">
-                <div className="flex w-full md:w-auto gap-2">
+            <div className="mb-3 md:mb-4 flex flex-col md:flex-row items-center gap-4 font-semibold">
+                <div className="flex items-center w-full md:w-auto gap-2">
                     <label htmlFor="search">Search:</label>
                     <input
-                        className="indent-2 ring-2 px-2 ring-slate-300 rounded flex-1 focus:outline-none focus:ring-emerald-500 duration-300 ease-in-out"
+                        className="indent-1 ring-1 px-4 py-1 ring-slate-300 flex-1 focus:outline-none focus:ring-emerald-500 duration-300 ease-in-out"
                         id="search"
                         type="text"
                         value={searchFilter}
@@ -49,7 +49,7 @@ const ProductList: React.FC<ProductListProps> = (props: any) => {
                         onChange={(e) => setSearchFilter(e.target.value)}
                     />
                 </div>
-                <div className="hidden md:flex gap-4 accent-emerald-500/80">
+                <div className="hidden md:flex items-center py-1 gap-4 accent-emerald-500/80">
                     <div className="flex gap-2">
                         <label htmlFor="price-range">Price Range:</label>
                         <input
@@ -79,12 +79,12 @@ const ProductList: React.FC<ProductListProps> = (props: any) => {
                             return (
                                 <div
                                     key={product.id}
-                                    className="z-10 flex flex-col p-4 bg-white rounded shadow hover:-translate-y-2 ease-in-out duration-300 group ">
+                                    className="z-10 flex flex-col p-4 bg-white hover:bg-slate-100 shadow hover:-translate-y-2 ease-in-out duration-300 group ">
                                     <Link href="all-products">
                                         <img
                                             src={product.image}
                                             alt={product.title}
-                                            className="w-full h-64 object-cover rounded-t-lg  duration-300 ease-in-out"
+                                            className="w-full h-64 object-cover   duration-300 ease-in-out"
                                             loading="lazy"
                                         />
                                     </Link>
