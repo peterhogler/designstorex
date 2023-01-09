@@ -192,7 +192,7 @@ const Navbar: React.FC = () => {
                                                 <div className="flex gap-5 px-5">
                                                     <span className="text-sm">Add to wishlist</span>
                                                     <button
-                                                        className="text-sm underline underline-offset-4"
+                                                        className="text-sm underline underline-offset-4 hover:text-rose-600 duration-300 ease"
                                                         onClick={() => handleProductDelete(product)}>
                                                         Remove item
                                                     </button>
