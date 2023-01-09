@@ -122,6 +122,7 @@ const Navbar: React.FC = () => {
                             if (timeoutId) clearTimeout(timeoutId);
                         }}
                         onMouseLeave={() => setOnHover(false)}>
+                        <div className="top-[-7.5px] right-[1.4rem] h-3 w-3 bg-white border-t border-l border-black absolute rotate-45" />
                         {cart.length === 0 ? (
                             <div className="text-center">
                                 <div className="p-4">
@@ -156,29 +157,29 @@ const Navbar: React.FC = () => {
                                                         />
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <h1 className="text-lg">{product.title}</h1>
-                                                        <div className="flex gap-3 text-md">
-                                                            <span className="flex-1 flex gap-2">
-                                                                Quantity: {product.quantity}
-                                                                <div className="flex gap-2">
-                                                                    <button
-                                                                        onClick={() =>
-                                                                            handleProductDelete(product)
-                                                                        }>
-                                                                        <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
-                                                                            -
-                                                                        </div>
-                                                                    </button>
-                                                                    <button
-                                                                        onClick={() =>
-                                                                            handleProductAdd(product)
-                                                                        }>
-                                                                        <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
-                                                                            +
-                                                                        </div>
-                                                                    </button>
-                                                                </div>
-                                                            </span>
+                                                        <h1 className="text-lg">
+                                                            {product.title.length < 25
+                                                                ? product.title.substring(0, 25)
+                                                                : product.title.substring(0, 25) + " . . ."}
+                                                        </h1>
+                                                        <div className="flex space-evenly gap-3 text-md">
+                                                            <span>{product.quantity}</span>
+                                                            <div className="flex">
+                                                                <button
+                                                                    onClick={() => handleProductAdd(product)}>
+                                                                    <div className="grid place-items-center h-full w-7 text-md bg-emerald-400">
+                                                                        +
+                                                                    </div>
+                                                                </button>
+                                                                <button
+                                                                    onClick={() =>
+                                                                        handleProductDelete(product)
+                                                                    }>
+                                                                    <div className="grid place-items-center h-full w-7 bg-gray-50 text-md hover:bg-rose-600">
+                                                                        -
+                                                                    </div>
+                                                                </button>
+                                                            </div>
                                                             <span>${product.price}</span>
                                                         </div>
                                                     </div>
@@ -202,7 +203,7 @@ const Navbar: React.FC = () => {
                                     </div>
                                     <div className="flex justify-between">
                                         <span>Total:</span>
-                                        <span className="font-semibold">${total.toFixed(0)}</span>
+                                        <span className="font-semibold text-xl">${total.toFixed(0)}</span>
                                     </div>
                                 </div>
                                 <div className="flex mx-5 mb-5">

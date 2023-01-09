@@ -10,8 +10,6 @@ const Page: React.FC = () => {
     const slug = pathname?.split("/").pop();
     const { data, isLoading, error } = useFetch(`https://fakestoreapi.com/products/${slug}`);
 
-    console.log(data);
-
     return (
         <section className="py-4">
             {isLoading ? (
