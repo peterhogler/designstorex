@@ -9,4 +9,6 @@ Work on the wishlist page that displays favorited items.
 Work on the checkout page and integrate Stripe (test) for secure payment processing to enhance UX.
 
 Future Improvements:
-Refactoring the code for better performance? and possibly better readability (Make it more components based)
+Refactoring the code for better performance? and better readability (Make it more components based)
+
+https://designstorex.vercel.app/
