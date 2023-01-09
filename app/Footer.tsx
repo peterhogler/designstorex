@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="border-x px-4 overflow-hidden">
+                <div className=" lg:border-x lg:px-4 overflow-hidden">
                     <h1 className="font-semibold underline underline-offset-4 px-1 pb-3  border-b-gray-300 text-[1.1rem]">
                         Subpages
                     </h1>

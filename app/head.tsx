@@ -2,7 +2,7 @@ const Head: React.FC = () => {
     return (
         <>
             <title>Design Store X | Home</title>
-            <meta content="width=device-width, initial-scale=1" name="viewport" />
+            <meta content="width=device-width, initial-scale=1" name="viewport" lang="eng" />
             <link rel="icon" href="/favicon.ico" />
         </>
     );
