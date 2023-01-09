@@ -180,7 +180,7 @@ const Navbar: React.FC = () => {
                                                                     onClick={() =>
                                                                         handleProductDelete(product)
                                                                     }>
-                                                                    <div className="grid place-items-center h-full w-7 bg-gray-50 text-md hover:bg-rose-600">
+                                                                    <div className="grid place-items-center h-full w-7 bg-gray-50 text-md hover:bg-rose-600 duration-300 ease">
                                                                         -
                                                                     </div>
                                                                 </button>
