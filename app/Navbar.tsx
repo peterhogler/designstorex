@@ -160,12 +160,24 @@ const Navbar: React.FC = () => {
                                                         <div className="flex gap-3 text-md">
                                                             <span className="flex-1 flex gap-2">
                                                                 Quantity: {product.quantity}
-                                                                <button
-                                                                    onClick={() => handleProductAdd(product)}>
-                                                                    <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
-                                                                        +
-                                                                    </div>
-                                                                </button>
+                                                                <div className="flex gap-2">
+                                                                    <button
+                                                                        onClick={() =>
+                                                                            handleProductDelete(product)
+                                                                        }>
+                                                                        <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
+                                                                            -
+                                                                        </div>
+                                                                    </button>
+                                                                    <button
+                                                                        onClick={() =>
+                                                                            handleProductAdd(product)
+                                                                        }>
+                                                                        <div className="grid place-items-center h-full w-5 bg-gray-50 text-md">
+                                                                            +
+                                                                        </div>
+                                                                    </button>
+                                                                </div>
                                                             </span>
                                                             <span>${product.price}</span>
                                                         </div>
