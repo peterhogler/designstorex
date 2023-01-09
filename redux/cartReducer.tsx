@@ -9,8 +9,11 @@ interface CartState {
 }
 
 const initialState: CartState = {
-    products: [],
-    total: 0,
+    products: JSON.parse(window.localStorage.getItem("cart") || "[]"),
+    total: JSON.parse(window.localStorage.getItem("cart") || "[]").reduce(
+        (total: number, product: Product) => total + product.price * (product.quantity || 1),
+        0
+    ),
     cartTotal: 0,
     addedFixedAmount: false,
 };

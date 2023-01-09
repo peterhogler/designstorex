@@ -27,6 +27,7 @@ const Navbar: React.FC = () => {
     }, 0);
 
     useEffect(() => {
+        window.localStorage.setItem("cart", JSON.stringify(cart));
         if (cart.length > 0) {
             setOnHover(true);
 
@@ -43,9 +44,15 @@ const Navbar: React.FC = () => {
 
     const handleProductAdd = (product: Product) => {
         dispatch(ADD_ITEM(product));
+        const currentCart = JSON.parse(window.localStorage.getItem("cart") || "[]");
+        currentCart.push(product);
+        window.localStorage.setItem("cart", JSON.stringify(currentCart));
     };
     const handleProductDelete = (product: Product) => {
         dispatch(REMOVE_ITEM(product));
+        const currentCart = JSON.parse(window.localStorage.getItem("cart") || "[]");
+        const updatedCart = currentCart.filter((cartProduct: Product) => cartProduct.id !== product.id);
+        window.localStorage.setItem("cart", JSON.stringify(updatedCart));
     };
 
     return (
@@ -158,9 +165,7 @@ const Navbar: React.FC = () => {
                                                     </div>
                                                     <div className="flex flex-col">
                                                         <h1 className="text-lg">
-                                                            {product.title.length < 25
-                                                                ? product.title.substring(0, 25)
-                                                                : product.title.substring(0, 25) + " . . ."}
+                                                            {product.title.substring(0, 20)}
                                                         </h1>
                                                         <div className="flex space-evenly gap-3 text-md">
                                                             <span>{product.quantity}</span>
