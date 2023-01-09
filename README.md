@@ -8,7 +8,7 @@ Fictional E-commerce website, made by myself, that has search filtering system, 
 Todos:
 Work on the product page which should be a grid (image & description)
 Work on the wishlist page that displays favorited items.
-Work on the checkout page and integrate Stripe (test) for secure payment processing to enhance UX.
+Work on the checkout page and maybe integrate Stripe (test) for secure payment processing to enhance UX.
 
 Future Improvements:
 Refactoring the code for better performance? and better readability (Make it more components based)
