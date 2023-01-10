@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
                 }, 4500)
             );
         }
-    }, [cart, timeoutId]);
+    }, [cart]);
 
     const handleProductAdd = (product: Product) => {
         dispatch(ADD_ITEM(product));
