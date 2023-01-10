@@ -10,7 +10,7 @@ const Page: React.FC = () => {
     const slug = pathname?.split("/").pop();
     const { data, isLoading, error } = useSingleProduct(`https://fakestoreapi.com/products/${slug}`);
     return (
-        <section className="py-4">
+        <section>
             {isLoading ? (
                 <div className="h-[50dvh] w-full grid place-items-center">
                     <div className="flex flex-col gap-2 items-center text-2xl">

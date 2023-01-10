@@ -6,7 +6,7 @@ import ProductsList from "../all-products/ProductsList";
 const Page: React.FC = () => {
     const { data, error, isLoading } = useProductListResult("https://fakestoreapi.com/products");
     return (
-        <section>
+        <section className="py-4">
             {isLoading ? (
                 <div className="h-[50dvh] w-full grid place-items-center">
                     <div className="flex flex-col gap-2 items-center text-2xl">
