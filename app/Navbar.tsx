@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                     <span className="font-semibold">Peter Demo 🔥</span>
                 </div>
             </div>
-            <nav className="relative h-20 py-4 px-4 flex items-center  border-b-gray-300 lg:bg-gray-50/50 lg:border-l lg:border-b lg:border-r font-semibold">
+            <nav className="relative h-20 py-4 lg:px-4 flex items-center  border-b-gray-300 lg:bg-gray-50/50 lg:border-l lg:border-b lg:border-r font-semibold">
                 <div>
                     <Link href="/">
                         <div className="text-2xl hover:text-emerald-500 duration-200 ease">
