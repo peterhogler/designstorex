@@ -25,12 +25,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
 
     return (
         <div className="min-h-[50dvh] grid grid-cols-1 lg:grid-cols-2 place-items-center gap-y-10 max-w-[1440px] m-auto">
-            <div className="w-[520px] h-[360px] relative ">
-                <div className="absolute grid place-items-center rounded-full top-[12px] right-[130px] lg:right-[85px] h-10 w-10 bg-gray-200">
-                    <button className="hover:text-rose-600 duration-300 ease ">
-                        <CgHeart size={25} />
-                    </button>
-                </div>
+            <div className="w-[520px] h-[300px] lg:h-[500px] ">
                 <img
                     className="h-full w-full object-contain block"
                     src={product.image}
@@ -65,6 +60,11 @@ const Product: React.FC<ProductProps> = ({ product }) => {
                             onClick={() => handleProductAdd(product)}>
                             <span>Add to cart</span> <CgArrowRight size={23} />
                         </button>
+                        <div className="hidden md:grid place-items-center rounded-full top-[10px] md:top-[16px] right-[130px] lg:right-[85px] h-10 w-10 bg-gray-200">
+                            <button className="hover:text-rose-600 duration-300 ease ">
+                                <CgHeart size={25} />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
