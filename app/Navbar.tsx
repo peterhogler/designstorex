@@ -139,11 +139,13 @@ const Navbar: React.FC = () => {
                                                     key={product.id}
                                                     className="px-5 flex items-center gap-4 my-4">
                                                     <div>
-                                                        <img
-                                                            src={product.image}
-                                                            alt={product.title}
-                                                            className="h-20 w-20 object-cover"
-                                                        />
+                                                        <Link href={`all-products/${product.id}`}>
+                                                            <img
+                                                                src={product.image}
+                                                                alt={product.title}
+                                                                className="h-20 w-20 object-cover"
+                                                            />
+                                                        </Link>
                                                     </div>
                                                     <div className="flex flex-col">
                                                         <h1 className="text-lg mb-3">
