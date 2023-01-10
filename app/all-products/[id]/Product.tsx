@@ -51,15 +51,17 @@ const Product: React.FC<ProductProps> = ({ product }) => {
                     <div className="text-lg">
                         <p className="my-6">{product.description}</p>
                     </div>
-                    <p className="text-2xl">${product.price}</p>
+                    <div>
+                        <p className="text-2xl">${product.price}</p>
+                    </div>
                     <div className="flex gap-8 items-center mt-12 font-semibold">
                         <button className="flex gap-2" onClick={handleGoBack}>
-                            <CgArrowLeft size={23} /> Go back
+                            <CgArrowLeft size={23} /> <span>Go back</span>
                         </button>
                         <button
                             className="flex gap-2 border border-black px-8 py-[0.75rem] duration-200 ease"
                             onClick={() => handleProductAdd(product)}>
-                            Add to cart <CgArrowRight size={23} />
+                            <span>Add to cart</span> <CgArrowRight size={23} />
                         </button>
                     </div>
                 </div>
