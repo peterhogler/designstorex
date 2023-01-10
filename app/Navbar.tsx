@@ -195,7 +195,7 @@ const Navbar: React.FC = () => {
                                 </div>
                                 <div className="flex mx-5 mb-5">
                                     <button
-                                        className="w-full p-2 bg-black text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                        className="w-full py-[0.75rem] bg-black text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
                                         disabled={cart.length < 1}>
                                         Go to checkout
                                     </button>
