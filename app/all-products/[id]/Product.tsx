@@ -24,9 +24,9 @@ const Product: React.FC<ProductProps> = ({ product }) => {
     };
 
     return (
-        <div className="min-h-[50dvh] grid grid-cols-1 lg:grid-cols-2 place-items-center gap-4 p-6 max-w-[1440px] m-auto">
+        <div className="min-h-[50dvh] grid grid-cols-1 lg:grid-cols-2 place-items-center gap-y-10 max-w-[1440px] m-auto">
             <div className="w-[520px] h-[360px] relative ">
-                <div className="absolute grid place-items-center rounded-full top-4 right-6 h-10 w-10 bg-gray-200">
+                <div className="absolute grid place-items-center rounded-full top-[12px] right-[130px] lg:right-[85px] h-10 w-10 bg-gray-200">
                     <button className="hover:text-rose-600 duration-300 ease ">
                         <CgHeart size={25} />
                     </button>
@@ -37,7 +37,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
                     alt={product.description}
                 />
             </div>
-            <div className="px-6">
+            <div>
                 <div>
                     <div>
                         <h1 className="text-3xl font-semibold">{product.title}</h1>
@@ -54,7 +54,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
                     <div>
                         <p className="text-2xl">${product.price}</p>
                     </div>
-                    <div className="flex gap-10 items-center mt-12 font-semibold">
+                    <div className="flex gap-12 flex-wrap items-center mt-12 font-semibold">
                         <button
                             className="flex gap-2 hover:text-rose-600 duration-300 ease"
                             onClick={handleGoBack}>

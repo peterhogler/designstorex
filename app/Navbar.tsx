@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
                     <span className="font-semibold">Peter Demo 🔥</span>
                 </div>
             </div>
-            <nav className="relative h-20 py-4 px-4 flex items-center border-b border-b-gray-300 bg-gray-50/50 border-l border-r font-semibold">
+            <nav className="relative h-20 py-4 px-4 flex items-center  border-b-gray-300 lg:bg-gray-50/50 lg:border-l lg:border-b lg:border-r font-semibold">
                 <div>
                     <Link href="/">
                         <div className="text-2xl hover:text-emerald-500 duration-200 ease">
@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
                         <li className="cursor-pointer">
                             <CgSearch size={24}>Icon</CgSearch>
                         </li>
-                        <li className="cursor-pointer">
+                        <li className="cursor-pointer hidden lg:block">
                             <CgUser size={24}>Icon</CgUser>
                         </li>
                         <li className="cursor-pointer">
