@@ -23,19 +23,19 @@ const Footer: React.FC = () => {
                             className={`hover:bg-black p-1 duration-200 ease-linear hover:text-emerald-500 ${
                                 pathname === "/men" ? "text-emerald-500" : ""
                             }`}>
-                            <Link href="Men">Men</Link>
+                            <Link href="all-products">Men</Link>
                         </li>
                         <li
                             className={`hover:bg-black p-1 duration-200 ease-linear hover:text-emerald-500 ${
                                 pathname === "/woman" ? "text-emerald-500" : ""
                             }`}>
-                            <Link href="women">Woman</Link>
+                            <Link href="all-products">Woman</Link>
                         </li>
                         <li
                             className={`hover:bg-black p-1 duration-200 ease-linear hover:text-emerald-500 ${
                                 pathname === "/jewelry" ? "text-emerald-500" : ""
                             }`}>
-                            <Link href="jewelry">Jewelry</Link>
+                            <Link href="all-products">Jewelry</Link>
                         </li>
                     </ul>
                 </div>

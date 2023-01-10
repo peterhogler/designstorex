@@ -29,9 +29,9 @@ const ProductList: React.FC<ProductListProps> = ({ products }) => {
         setFilteredProducts(filteredProducts);
     }, [searchFilter, priceRange]);
 
-    function handleProductAdd(product: Product) {
+    const handleProductAdd = (product: Product) => {
         dispatch(ADD_ITEM(product));
-    }
+    };
 
     return (
         <>

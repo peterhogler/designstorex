@@ -81,24 +81,6 @@ const Navbar: React.FC = () => {
                             }`}>
                             <Link href="/all-products">All Products</Link>
                         </li>
-                        <li
-                            className={`hover:text-emerald-500 duration-200 ease ${
-                                pathname === "/men" ? "text-emerald-500" : ""
-                            }`}>
-                            <Link href="men">Men</Link>
-                        </li>
-                        <li
-                            className={`hover:text-emerald-500 duration-200 ease ${
-                                pathname === "/women" ? "text-emerald-500" : ""
-                            }`}>
-                            <Link href="women">Women</Link>
-                        </li>
-                        <li
-                            className={`hover:text-emerald-500 duration-200 ease ${
-                                pathname === "/jewelry" ? "text-emerald-500" : ""
-                            }`}>
-                            <Link href="jewelry">Jewelery</Link>
-                        </li>
                     </ul>
                 </div>
                 <div className="flex ml-auto items-center relative z-10">
