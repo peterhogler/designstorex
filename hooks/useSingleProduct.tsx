@@ -1,33 +1,14 @@
 import { useState, useEffect } from "react";
+import { Product } from "../app/Types/Interfaces";
 
-export interface Product {
-    id: number;
-    name: string;
-    price: number;
-    title: string;
-    description: string;
-    category: string;
-    image: string;
-    quantity?: number;
-    rating: {
-        rate: number;
-    };
-}
-
-export interface Data {
-    products: Product[];
-}
-
-interface FetchHookResult<T> {
-    data: T | null;
+interface FetchHookResult {
+    data: Product | null;
     error: Error | null;
     isLoading: boolean;
 }
 
-//https://fakestoreapi.com/products/category/jewelery
-
-export default function useFetch(url: string): FetchHookResult<Data> {
-    const [data, setData] = useState<Data | null>(null);
+export default function useSingleProduct(url: string): FetchHookResult {
+    const [data, setData] = useState<Product | null>(null);
     const [error, setError] = useState<Error | null>(null);
     const [isLoading, setIsLoading] = useState(false);
 

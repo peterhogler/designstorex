@@ -1,19 +1,17 @@
 import { useState, useEffect } from "react";
-import { Product, Data } from "../../hooks/useFetch";
 import { useDispatch } from "react-redux";
 import { ADD_ITEM } from "../../redux/cartReducer";
+import { Product } from "../../app/Types/Interfaces";
 import Link from "next/link";
 
 interface ProductListProps {
-    products: Data;
+    products: Product[];
 }
 
-const ProductList: React.FC<ProductListProps> = (props: any) => {
+const ProductList: React.FC<ProductListProps> = ({ products }) => {
     const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
     const [searchFilter, setSearchFilter] = useState("");
     const [priceRange, setPriceRange] = useState(200);
-
-    const { products } = props;
 
     const dispatch = useDispatch();
 

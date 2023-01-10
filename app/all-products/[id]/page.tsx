@@ -2,14 +2,13 @@
 
 import { usePathname } from "next/navigation";
 import { BeatLoader } from "react-spinners";
-import useFetch from "../../../hooks/useFetch";
+import useSingleProduct from "../../../hooks/useSingleProduct";
 import Product from "./Product";
 
 const Page: React.FC = () => {
     const pathname = usePathname();
     const slug = pathname?.split("/").pop();
-    const { data, isLoading, error } = useFetch(`https://fakestoreapi.com/products/${slug}`);
-
+    const { data, isLoading, error } = useSingleProduct(`https://fakestoreapi.com/products/${slug}`);
     return (
         <section className="py-4">
             {isLoading ? (
@@ -21,7 +20,7 @@ const Page: React.FC = () => {
                     </div>
                 </div>
             ) : data ? (
-                <Product />
+                <Product product={data} />
             ) : null}
             {error ? (
                 <div className="h-[50dvh] grid place-items-center text-2xl">

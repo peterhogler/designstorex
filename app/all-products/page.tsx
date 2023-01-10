@@ -1,10 +1,10 @@
 "use client";
-import useFetch from "../../hooks/useFetch";
+import useProductListResult from "../../hooks/useProductListResult";
 import { BeatLoader } from "react-spinners";
 import ProductsList from "../all-products/ProductsList";
 
 const Page: React.FC = () => {
-    const { data, error, isLoading } = useFetch("https://fakestoreapi.com/products");
+    const { data, error, isLoading } = useProductListResult("https://fakestoreapi.com/products");
     return (
         <section className="py-4">
             {isLoading ? (

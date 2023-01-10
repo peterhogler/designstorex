@@ -6,7 +6,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../redux/store";
-import { Product } from "../hooks/useFetch";
+import { Product } from "../app/Types/Interfaces";
 import { ADD_ITEM, REMOVE_ITEM } from "../redux/cartReducer";
 
 const Navbar: React.FC = () => {
