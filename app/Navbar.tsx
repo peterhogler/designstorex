@@ -146,10 +146,10 @@ const Navbar: React.FC = () => {
                                                         />
                                                     </div>
                                                     <div className="flex flex-col">
-                                                        <h1 className="text-lg">
+                                                        <h1 className="text-lg mb-3">
                                                             {product.title.substring(0, 20)}
                                                         </h1>
-                                                        <div className="flex space-evenly gap-3 text-md">
+                                                        <div className="flex space-evenly gap-4 text-md">
                                                             <span>{product.quantity}</span>
                                                             <div className="flex">
                                                                 <button
