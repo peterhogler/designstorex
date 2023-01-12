@@ -118,12 +118,12 @@ const Navbar: React.FC = () => {
                                     <h1 className="text-lg">Your shopping cart is empty</h1>
                                 </div>
                                 <div className="p-4 bg-gray-100">
-                                    <div>
-                                        <h1 className="mb-5">Looking for inspiration?</h1>
-                                        <button className="relative w-full text-black border border-black justify-center py-[0.75rem] hover:bg-black hover:text-white duration-300 ease">
-                                            <Link href="/all-products">View All Products</Link>
+                                    <h1 className="mb-5">Looking for inspiration?</h1>
+                                    <Link href="/all-products">
+                                        <button className="w-full bg-black text-white  py-[0.75rem]">
+                                            View All Products
                                         </button>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         ) : (
@@ -196,11 +196,11 @@ const Navbar: React.FC = () => {
                                     </div>
                                 </div>
                                 <div className="flex mx-5 mb-5">
-                                    <button
-                                        className="w-full py-[0.75rem] bg-black text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
-                                        disabled={cart.length < 1}>
+                                    <Link
+                                        className="w-full text-center py-[0.75rem] bg-black text-white  font-semibold hover:text-emerald-500 duration-300 ease-in-out"
+                                        href="">
                                         Go to checkout
-                                    </button>
+                                    </Link>
                                 </div>
                             </>
                         )}
