@@ -85,10 +85,10 @@ const Navbar: React.FC = () => {
                 </div>
                 <div className="flex ml-auto items-center relative z-10">
                     <ul className="flex gap-6">
-                        <li className="cursor-pointer">
+                        <li className="hidden cursor-pointer">
                             <CgSearch size={24}>Icon</CgSearch>
                         </li>
-                        <li className="cursor-pointer hidden lg:block">
+                        <li className="hidden cursor-pointer  lg:block">
                             <CgUser size={24}>Icon</CgUser>
                         </li>
                         <li className="cursor-pointer">
